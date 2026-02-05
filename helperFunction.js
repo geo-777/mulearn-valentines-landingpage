@@ -17,7 +17,7 @@ const sendData = async (data) => {
 
   //validations
   if (String(data.phoneNo).length !== 10) {
-    throw new Error("Error: Invalid Phone no");
+    throw new Error("Invalid Phone no");
   }
   if (!EMAIL_REGEX.test(data.email)) {
     throw new Error("Invalid email");
