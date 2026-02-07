@@ -1,13 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/mulogo.png" />
-    <title>μLearn Valentine</title>
-  </head>
-  <body></body>
-  <script src="script.js"></script>
-  <script src="helperFunction.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./assets/mulogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Righteous&display=swap"
+    rel="stylesheet">
+  <title>μlentine's</title>
+</head>
+
+<body>
+  <!-- Dynamic Canvas Background -->
+  <canvas id="background-canvas"></canvas>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="title">Singles Mingle</h1>
+      <p class="subtitle">Why should couples have all the fun?!<br>Join our Treasure Hunt & make new friends this
+        Valentine's.</p>
+
+      <div class="preference-selection">
+        <h2>Who are you looking to meet?</h2>
+        <div class="buttons-container">
+          <button class="pref-btn" data-pref="Boy">
+            <span class="emoji">Looking for a...</span>
+            Boy
+          </button>
+          <button class="pref-btn" data-pref="Girl">
+            <span class="emoji">Maybe,</span>
+            Girl
+          </button>
+          <button class="pref-btn" data-pref="Any">
+            <span class="emoji">Doesn't Matter</span>
+            Surprise Me!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="registration-section" class="registration hidden">
+      <div class="form-card">
+        <h3>You selected: <span id="selected-pref-display"></span></h3>
+        <p>Tell us a bit about yourself to join the hunt!</p>
+
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Your Name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required placeholder="9876543210" pattern="[0-9]{10}">
+          </div>
+
+          <input type="hidden" id="preference" name="preference">
+
+          <button type="submit" class="submit-btn">Let's Go! 🚀</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+<script src="helperFunction.js"></script>
+<script src="script.js"></script>
+
 </html>
