@@ -168,15 +168,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             await sendData(formData);
-            alert('Yay! You are registered for the Treasure Hunt! 💌');
-            form.reset();
-            registrationSection.classList.add('hidden');
-            prefBtns.forEach(b => b.classList.remove('active'));
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Hide form and show success message
+            form.style.display = 'none';
+            form.parentElement.querySelector('p').style.display = 'none'; // Hide intro text
+            form.parentElement.querySelector('h3').style.display = 'none'; // Hide title
+
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.remove('hidden');
+
+            // Confetti effect (optional simplified version or just scrolling)
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
         } catch (error) {
             console.error(error);
             alert('Oops! Something went wrong. Please try again.');
-        } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
         }
