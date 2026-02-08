@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phoneNo: document.getElementById('phone').value,
+            gender: document.getElementById('gender').value,
             preference: prefInput.value
         };
 
